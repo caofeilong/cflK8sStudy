@@ -1,0 +1,23 @@
+apiVersion: apps/v1  # api版本
+kind: Deployment    # api 对象类型
+metadata:             
+  name: first-nginx
+spec:             
+  selector:
+    matchLabels:
+      app: first-nginx
+  replicas: 2 # pod 副本的数量
+  template:  # pod模板
+    metadata:   
+      labels:
+        app: first-nginx
+    spec:
+      containers:
+      - name: first-nginx
+        image: nginx:1.18.0
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
