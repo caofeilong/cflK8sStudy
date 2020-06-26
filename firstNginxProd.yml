@@ -2,6 +2,9 @@ apiVersion: apps/v1  # api版本
 kind: Deployment    # api 对象类型
 metadata:             
   name: first-nginx
+  # namespace : default  
+  # labels 
+  #  run: nginx-app
 spec:             
   selector:
     matchLabels:
