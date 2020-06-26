@@ -36,6 +36,9 @@ metadata:
   name: ingress-nginx-controller
   namespace: ingress-nginx
 data:
+  proxy-connect-timeout: "10"
+  proxy-read-timeout: "120"
+  proxy-send-timeout: "120"
 ---
 # Source: ingress-nginx/templates/clusterrole.yaml
 apiVersion: rbac.authorization.k8s.io/v1
